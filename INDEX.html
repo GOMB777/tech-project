@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人首頁</title>
+    <!-- 引入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Font Awesome 圖標 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border: 4px solid transparent;
+            animation: pulse-border 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse-border {
+            0% { border-color: #39FF14; }
+            50% { border-color: #FF4500; }
+            100% { border-color: #39FF14; }
+        }
+
+        .link-button {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .link-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(57, 255, 20, 0.4), 0 5px 10px rgba(255, 69, 0, 0.4);
+        }
+
+        .social-link {
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-link:hover {
+            color: #39FF14;
+        }
+
+        .tag {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .tag:hover {
+            background-color: #39FF14;
+            color: #000;
+        }
+
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 flex items-center justify-center min-h-screen p-4">
+
+    <div class="container mx-auto p-8 bg-gray-800 rounded-3xl shadow-2xl flex flex-col items-center space-y-8">
+
+        <!-- 標題與簡介區塊 -->
+        <header class="text-center space-y-4">
+            <div class="relative w-40 h-40 mx-auto">
+                <!-- 圖片使用 placeholder，可替換為你的頭像網址 -->
+                <img src="https://placehold.co/160x160/2d2d2d/ffffff?text=Your+Photo"
+                     alt="個人頭像"
+                     class="profile-pic rounded-full object-cover">
+                <span class="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full animate-ping"></span>
+                <span class="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full"></span>
+            </div>
+            <h1 class="text-4xl font-extrabold text-white">學生 (名字)</h1>
+            <p class="text-xl text-gray-400 font-semibold">
+                一位熱愛足球與旅遊的學生
+            </p>
+        </header>
+
+        <!-- 主要連結按鈕區塊 -->
+        <main class="w-full space-y-4">
+            <a href="https://github.com/your-github-username"
+               target="_blank"
+               class="link-button w-full flex items-center justify-center space-x-4 p-4 bg-gray-700 rounded-xl hover:bg-gray-600 transition-all duration-300">
+                <i class="fab fa-github fa-2x text-white"></i>
+                <span class="text-lg font-bold">GitHub</span>
+            </a>
+
+            <a href="mailto:your-email@example.com"
+               class="link-button w-full flex items-center justify-center space-x-4 p-4 bg-gray-700 rounded-xl hover:bg-gray-600 transition-all duration-300">
+                <i class="fas fa-envelope fa-2x text-white"></i>
+                <span class="text-lg font-bold">Email</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/your-linkedin-profile"
+               target="_blank"
+               class="link-button w-full flex items-center justify-center space-x-4 p-4 bg-gray-700 rounded-xl hover:bg-gray-600 transition-all duration-300">
+                <i class="fab fa-linkedin fa-2x text-white"></i>
+                <span class="text-lg font-bold">LinkedIn</span>
+            </a>
+        </main>
+
+        <!-- 社交媒體連結區塊 (類似 Linktree) -->
+        <section class="w-full text-center space-y-4 pt-4 border-t border-gray-700">
+            <h2 class="text-2xl font-bold text-white">追蹤我</h2>
+            <div class="flex justify-center items-center space-x-8">
+                <a href="https://www.instagram.com/your-ig-handle"
+                   target="_blank"
+                   class="social-link text-white text-3xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- 你可以增加其他社交媒體連結 -->
+                <a href="https://www.facebook.com/your-fb-profile"
+                   target="_blank"
+                   class="social-link text-white text-3xl">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 頁尾與興趣標籤 -->
+        <footer class="w-full text-center mt-8">
+            <div class="flex flex-wrap justify-center gap-2">
+                <span class="tag px-3 py-1 rounded-full text-sm font-medium">#足球</span>
+                <span class="tag px-3 py-1 rounded-full text-sm font-medium">#旅遊</span>
+                <span class="tag px-3 py-1 rounded-full text-sm font-medium">#學生</span>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
